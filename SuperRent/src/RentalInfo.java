@@ -9,13 +9,18 @@ public class RentalInfo {
     private Member member;
     private Item item;
     private Store store;
+    private Date date;
 
     public RentalInfo(){
 
     }
 
-
     public boolean checkIfOverdue() {
+        return date.checkIfOverdue(dueDate.getCurrentDate(), dateReturned.getCurrentDate()) > 0;
+    }
+
+  /* stara verzija
+  public boolean checkIfOverdue() {
 
         try {
             if (dateReturned.compareTo(dueDate) > 0) {
@@ -28,7 +33,7 @@ public class RentalInfo {
         }
         return false;
     }
-
+*/
 
     public Date getDueDate() {
         return dueDate;
