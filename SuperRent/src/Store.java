@@ -9,6 +9,43 @@ public class Store {
     private String manager;
     private ArrayList<Item> items;
 
+    //constructors
+
+    public Store(String name, String location, String phone, String manager) {
+
+        items = new ArrayList<Item>();
+        setName(name);
+        setLocation(location);
+        setPhone(phone);
+        setManager(manager);
+
+    }
+
+    public Store() {
+
+        items = new ArrayList<Item>();
+        setName(null);
+        setLocation(null);
+        setPhone(null);
+        setManager(null);
+
+    }
+
+    public Store(Store other) {
+
+        items = new ArrayList<Item>();
+        setName(other.name);
+        setLocation(other.location);
+        setPhone(other.phone);
+        setManager(other.manager);
+
+    }
+
+
+
+
+    //setters and getters
+
     public String getName() {
         return name;
     }

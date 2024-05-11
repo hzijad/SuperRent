@@ -20,6 +20,30 @@ public class SuperRent {
         return members.contains(member);
     }
 
+    public static void register(Member primaryMember) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Registration form: ");
+
+        System.out.println("ID: ");
+        primaryMember.setId(scanner.nextLine());
+
+        System.out.println("Name: ");
+        primaryMember.setName(scanner.nextLine());
+
+        System.out.println("Address: ");
+        primaryMember.setAddress(scanner.nextLine());
+
+        System.out.println("Phone: ");
+        primaryMember.setPhone(scanner.nextLine());
+
+        primaryMember.setUniqueMembershipNumber((int) (Math.random() * 900000) + 100000);
+
+        members.add(primaryMember);
+
+
+    }
+
 
     public ArrayList<Member> getMembers() {
         return members;

@@ -3,6 +3,7 @@ import java.util.Objects;
 public class Item {
 
     private int serial_number;
+    private Title title;
 
     public int getSerial_number() {
         return serial_number;
@@ -11,6 +12,10 @@ public class Item {
     public void setSerial_number(int serial_number) {
         this.serial_number = serial_number;
     }
+
+    public Title getTitle() { return title; }
+
+    public void setTitle(Title title) { this.title = title; }
 
     @Override
     public String toString() {
@@ -24,7 +29,7 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return serial_number == item.serial_number;
+        return serial_number == item.serial_number && title.equals(item.title);
     }
 
     @Override

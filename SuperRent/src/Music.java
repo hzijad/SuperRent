@@ -9,6 +9,48 @@ public class Music extends Title {
     private int uniqueRentalFee;
     private double uniqueLateFee;
 
+    //constructors
+
+    public Music(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String producer, int duration, int tracks, int uniqueRentalFee, int uniqueLateFee) {
+
+        super(rentalCode, name, description, title, uniqueStockNumber);
+
+        setProducer(producer);
+        setDuration(duration);
+        setTracks(tracks);
+        setUniqueRentalFee(uniqueRentalFee);
+        setUniqueLateFee(uniqueLateFee);
+
+    }
+
+    public Music() {
+
+        super();
+
+        setProducer(null);
+        setDuration(0);
+        setTracks(0);
+        setUniqueRentalFee(0);
+        setUniqueLateFee(0);
+
+    }
+
+    public Music(Music other) {
+
+        super(other);
+
+        setProducer(other.producer);
+        setSinger(other.singer);
+        setDuration(other.duration);
+        setTracks(other.tracks);
+        setUniqueRentalFee(other.uniqueRentalFee);
+        setUniqueLateFee(other.uniqueLateFee);
+
+    }
+
+
+    //setters and getters
+
     public String getProducer() {
         return producer;
     }

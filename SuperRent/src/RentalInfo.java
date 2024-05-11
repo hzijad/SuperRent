@@ -3,24 +3,36 @@ import java.lang.*;
 
 public class RentalInfo {
 
-    public Member getMember;
     private Date dueDate;
     private Date dateReturned;
     private Member member;
     private Item item;
     private Store store;
-    private Date date;
 
-    public RentalInfo(){
+    public RentalInfo(Date dueDate, Date dateReturned, Member member, Item item, Store store){
+
+        setDueDate(dueDate);
+        setDateReturned(dateReturned);
+        setMember(member);
+        setItem(item);
+        setStore(store);
 
     }
+
+    public RentalInfo(RentalInfo other) {
+
+        setDueDate(other.dueDate);
+        setDateReturned(other.dateReturned);
+        setMember(other.member);
+        setItem(other.item);
+        setStore(other.store);
+
+    }
+
+
+    /*
 
     public boolean checkIfOverdue() {
-        return date.checkIfOverdue(dueDate.getCurrentDate(), dateReturned.getCurrentDate()) > 0;
-    }
-
-  /* stara verzija
-  public boolean checkIfOverdue() {
 
         try {
             if (dateReturned.compareTo(dueDate) > 0) {
@@ -33,7 +45,9 @@ public class RentalInfo {
         }
         return false;
     }
-*/
+
+     */
+
 
     public Date getDueDate() {
         return dueDate;
