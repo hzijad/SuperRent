@@ -15,6 +15,11 @@ public class Rental {
 
     }
 
+    public int feeDueNow(Title title){
+
+        return title.getRentalFee();
+
+    }
 
     //constructors
 

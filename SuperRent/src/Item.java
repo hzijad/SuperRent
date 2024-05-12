@@ -5,6 +5,17 @@ public class Item {
     private int serial_number;
     private Title title;
 
+
+    //constructors
+
+    public Item(int serial_number, Title title) {
+        setSerial_number(serial_number);
+        setTitle(title);
+    }
+
+
+    //setters and getters
+
     public int getSerial_number() {
         return serial_number;
     }
