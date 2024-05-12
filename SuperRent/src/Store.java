@@ -9,6 +9,52 @@ public class Store {
     private String manager;
     private ArrayList<Item> items;
 
+    //constructors
+
+    public Store(String name, String location, String phone, String manager) {
+
+        items = new ArrayList<Item>();
+        setName(name);
+        setLocation(location);
+        setPhone(phone);
+        setManager(manager);
+
+    }
+
+    public Store() {
+
+        items = new ArrayList<Item>();
+        setName(null);
+        setLocation(null);
+        setPhone(null);
+        setManager(null);
+
+    }
+
+    public Store(Store other) {
+
+        items = new ArrayList<Item>();
+        setName(other.name);
+        setLocation(other.location);
+        setPhone(other.phone);
+        setManager(other.manager);
+
+    }
+
+    public void listItems(){
+
+        for(int i = 0; i < items.size(); i++){
+            if(items.get(i) != null){
+                System.out.println(items.get(i).getTitle().getName());
+            }
+        }
+    }
+
+
+
+
+    //setters and getters
+
     public String getName() {
         return name;
     }
@@ -59,6 +105,19 @@ public class Store {
 
     public boolean checkItemAvailability(Item item){
         return items.contains(item);
+    }
+
+    public Item findItem(String name){
+        for(int i = 0; i < items.size(); i++) {
+            if (name.equals(items.get(i).getTitle().getName())) {
+                return items.get(i);
+            }
+        }
+        return null;
+    }
+
+    public String processPayment(Item item, double cash){
+        return "Your change is " + (cash - item.getTitle().getRentalFee());
     }
 
     @Override

@@ -7,6 +7,49 @@ public class Title {
     private String description;
     private TitleType title;
     private int uniqueStockNumber;
+    private int rentalFee;
+    private int lateRentalFee;
+
+    //constructors
+
+    public Title(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, int rentalFee, int lateRentalFee){
+
+        setRentalCode(rentalCode);
+        setName(name);
+        setDescription(description);
+        setTitle(title);
+        setUniqueStockNumber(uniqueStockNumber);
+        setRentalFee(rentalFee);
+        setLateRentalFee(lateRentalFee);
+
+    }
+
+    public Title(){
+
+        setRentalCode(0);
+        setName(null);
+        setDescription(null);
+        setTitle(null);
+        setUniqueStockNumber(0);
+        setRentalFee(0);
+        setLateRentalFee(0);
+
+    }
+
+    public Title(Title other) {
+
+        this.rentalCode = other.rentalCode;
+        this.name = other.name;
+        this.description = other.description;
+        this.title = other.title;
+        this.uniqueStockNumber = other.uniqueStockNumber;
+        this.rentalFee = other.rentalFee;
+        this.lateRentalFee = other.lateRentalFee;
+
+    }
+
+
+    //setters and getters
 
     public int getRentalCode() {
         return rentalCode;
@@ -47,6 +90,15 @@ public class Title {
     public void setUniqueStockNumber(int uniqueStockNumber) {
         this.uniqueStockNumber = uniqueStockNumber;
     }
+
+    public int getRentalFee() { return rentalFee; }
+
+    public void setRentalFee(int rentalFee) { this.rentalFee = rentalFee; }
+
+    public int getLateRentalFeeRentalFee() { return lateRentalFee; }
+
+    public void setLateRentalFee(int lateRentalFee) { this.lateRentalFee = lateRentalFee; }
+
 
     @Override
     public String toString() {

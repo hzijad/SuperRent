@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Movie {
+public class Movie extends Title {
 
     private String director;
     private String cast;
@@ -9,6 +9,47 @@ public class Movie {
     private int uniqueRentalFee;
     private double uniqueLateFee;
 
+    //constructors
+
+    public Movie(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String director, String cast, int duration, int year, int rentalFee, int lateRentalFee) {
+
+        super(rentalCode, name, description, title, uniqueStockNumber, rentalFee, lateRentalFee);
+
+        setDirector(director);
+        setCast(cast);
+        setDuration(duration);
+        setYear(year);
+
+
+    }
+
+    public Movie() {
+
+        super();
+
+        setDirector(null);
+        setCast(null);
+        setDuration(0);
+        setYear(0);
+
+
+    }
+
+    public Movie(Movie other) {
+
+        super(other);
+
+        setDirector(other.director);
+        setCast(other.cast);
+        setDuration(other.duration);
+        setYear(other.year);
+
+
+    }
+
+
+
+    //setters and getters
     public String getDirector() {
         return director;
     }
@@ -41,21 +82,7 @@ public class Movie {
         this.year = year;
     }
 
-    public int getUniqueRentalFee() {
-        return uniqueRentalFee;
-    }
-
-    public void setUniqueRentalFee(int uniqueRentalFee) {
-        this.uniqueRentalFee = uniqueRentalFee;
-    }
-
-    public double getUniqueLateFee() {
-        return uniqueLateFee;
-    }
-
-    public void setUniqueLateFee(double uniqueLateFee) {
-        this.uniqueLateFee = uniqueLateFee;
-    }
+    /*
 
     @Override
     public String toString() {
@@ -81,4 +108,6 @@ public class Movie {
     public int hashCode() {
         return Objects.hash(director, cast, duration, year, uniqueRentalFee, uniqueLateFee);
     }
+
+     */
 }

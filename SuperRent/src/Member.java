@@ -8,6 +8,42 @@ public class Member {
     private String phone;
     private int uniqueMembershipNumber;
 
+    //constructors
+
+    public Member(String id, String name, String address, String phone, int uniqueMembershipNumber) {
+
+        setId(id);
+        setName(name);
+        setAddress(address);
+        setPhone(phone);
+        setUniqueMembershipNumber(uniqueMembershipNumber);
+
+    }
+
+    public Member() {
+
+        setId(null);
+        setName(null);
+        setAddress(null);
+        setPhone(null);
+        setUniqueMembershipNumber(0);
+
+    }
+
+    public Member(Member other) {
+
+        setId(other.id);
+        setName(other.name);
+        setAddress(other.address);
+        setPhone(other.phone);
+        setUniqueMembershipNumber(other.uniqueMembershipNumber);
+
+    }
+
+
+
+    //setters and getters
+
     public String getId() {
         return id;
     }

@@ -1,11 +1,44 @@
 import java.util.Objects;
 
-public class Game {
+public class Game extends Title {
 
     private String producer;
     private int year;
     private int uniqueRentalFee;
     private double uniqueLateFee;
+
+    //constructors
+
+    public Game(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String producer, int year, int rentalFee, int lateRentalFee) {
+
+        super(rentalCode, name, description, title, uniqueStockNumber, rentalFee, lateRentalFee);
+
+        setProducer(producer);
+        setYear(year);
+
+    }
+
+    public Game() {
+
+        super();
+
+        setProducer(null);
+        setYear(0);
+
+
+    }
+
+    public Game(Game other) {
+
+        super(other);
+
+        setProducer(other.producer);
+        setYear(other.year);
+
+
+    }
+
+    //setters and getters
 
     public String getProducer() {
         return producer;
@@ -23,21 +56,7 @@ public class Game {
         this.year = year;
     }
 
-    public int getUniqueRentalFee() {
-        return uniqueRentalFee;
-    }
-
-    public void setUniqueRentalFee(int uniqueRentalFee) {
-        this.uniqueRentalFee = uniqueRentalFee;
-    }
-
-    public double getUniqueLateFee() {
-        return uniqueLateFee;
-    }
-
-    public void setUniqueLateFee(double uniqueLateFee) {
-        this.uniqueLateFee = uniqueLateFee;
-    }
+    /*
 
     @Override
     public String toString() {
@@ -61,4 +80,6 @@ public class Game {
     public int hashCode() {
         return Objects.hash(producer, year, uniqueRentalFee, uniqueLateFee);
     }
+
+     */
 }
