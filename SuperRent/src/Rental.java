@@ -21,6 +21,7 @@ public class Rental {
 
     }
 
+
     //constructors
 
     public Rental(Date rental_Date) {

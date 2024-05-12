@@ -51,41 +51,6 @@ public class Title {
 
     //setters and getters
 
-    //constructors
-
-    public Title(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber){
-
-        setRentalCode(rentalCode);
-        setName(name);
-        setDescription(description);
-        setTitle(title);
-        setUniqueStockNumber(uniqueStockNumber);
-
-    }
-
-    public Title(){
-
-        setRentalCode(0);
-        setName(null);
-        setDescription(null);
-        setTitle(null);
-        setUniqueStockNumber(0);
-
-    }
-
-    public Title(Title other) {
-
-        this.rentalCode = other.rentalCode;
-        this.name = other.name;
-        this.description = other.description;
-        this.title = other.title;
-        this.uniqueStockNumber = other.uniqueStockNumber;
-
-    }
-
-
-    //setters and getters
-
     public int getRentalCode() {
         return rentalCode;
     }

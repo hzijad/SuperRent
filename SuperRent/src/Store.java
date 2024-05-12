@@ -52,6 +52,7 @@ public class Store {
 
 
 
+
     //setters and getters
 
     public String getName() {
@@ -108,15 +109,20 @@ public class Store {
 
     public Item findItem(String name){
         for(int i = 0; i < items.size(); i++) {
-            if (name.equals(items.get(i).getTitle().getName())) {
+            if (name.equalsIgnoreCase(items.get(i).getTitle().getName())) {
                 return items.get(i);
             }
         }
         return null;
     }
 
-    public String processPayment(Item item, double cash){
-        return "Your change is " + (cash - item.getTitle().getRentalFee());
+    public String processPayment(ArrayList<Item> items, double cash){
+        double total=0;
+        for(Item item:items) {
+            total+=item.getTitle().getRentalFee();
+
+        }
+        return "Your change is " + (cash - total);
     }
 
     @Override

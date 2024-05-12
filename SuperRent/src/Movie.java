@@ -20,6 +20,7 @@ public class Movie extends Title {
         setDuration(duration);
         setYear(year);
 
+
     }
 
     public Movie() {
@@ -31,6 +32,7 @@ public class Movie extends Title {
         setDuration(0);
         setYear(0);
 
+
     }
 
     public Movie(Movie other) {
@@ -41,6 +43,7 @@ public class Movie extends Title {
         setCast(other.cast);
         setDuration(other.duration);
         setYear(other.year);
+
 
     }
 
