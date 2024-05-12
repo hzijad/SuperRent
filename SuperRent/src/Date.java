@@ -1,4 +1,4 @@
-//sa stopericom, noob version
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Timer;
@@ -33,7 +33,7 @@ public class Date {
     }
 }
 
-/* actually bolja implementacija
+/* the better implementation for real world usage, but the upper one was intended for easier testing for you :)
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 

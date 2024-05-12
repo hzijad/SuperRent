@@ -8,12 +8,14 @@ public class Store {
     private String phone;
     private String manager;
     private ArrayList<Item> items;
+    private ArrayList<Item> boughtItems;
 
     //constructors
 
     public Store(String name, String location, String phone, String manager) {
 
         items = new ArrayList<Item>();
+        boughtItems=new ArrayList<Item>();
         setName(name);
         setLocation(location);
         setPhone(phone);
@@ -24,6 +26,7 @@ public class Store {
     public Store() {
 
         items = new ArrayList<Item>();
+        boughtItems=new ArrayList<Item>();
         setName(null);
         setLocation(null);
         setPhone(null);
@@ -34,6 +37,7 @@ public class Store {
     public Store(Store other) {
 
         items = new ArrayList<Item>();
+        boughtItems=new ArrayList<Item>();
         setName(other.name);
         setLocation(other.location);
         setPhone(other.phone);
@@ -83,6 +87,14 @@ public class Store {
         return manager;
     }
 
+    public ArrayList<Item> getBoughtItems(){
+        return boughtItems;
+    }
+
+    public void setBoughtItems(ArrayList<Item> bi){
+        this.boughtItems=bi;
+    }
+
     public void setManager(String manager) {
         this.manager = manager;
     }
@@ -122,7 +134,12 @@ public class Store {
             total+=item.getTitle().getRentalFee();
 
         }
-        return "Your change is " + (cash - total);
+        if(cash<total){
+            return "Not enough money, terminating the sale!!";
+        }
+        else {
+            return "Your change is " + (cash - total);
+        }
     }
 
     @Override

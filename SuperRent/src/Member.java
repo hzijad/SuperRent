@@ -8,6 +8,8 @@ public class Member {
     private String phone;
     private int uniqueMembershipNumber;
 
+
+
     //constructors
 
     public Member(String id, String name, String address, String phone, int uniqueMembershipNumber) {

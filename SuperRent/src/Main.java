@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -6,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
 
         Member primaryMember = new Member();
-        ArrayList<Item> items=new ArrayList<>();
 
         Store storeOne = new Store("FirstStore", "5th Avenue", "188357", "Kenan");
         SuperRent.addStore(storeOne);
@@ -21,18 +19,18 @@ public class Main {
 
         if (answerOne.equals("r")) {
             SuperRent.register(primaryMember);
-            renting(scanner,storeOne,items,primaryMember);
+            renting(scanner,storeOne,primaryMember);
         } else if (answerOne.equals("d")) {
             if (!(SuperRent.checkMembership(primaryMember))) {
                 System.out.println("Please register first");
                 SuperRent.register(primaryMember);
-                renting(scanner,storeOne,items,primaryMember);
+                renting(scanner,storeOne,primaryMember);
             } else {
-                renting(scanner,storeOne,items,primaryMember);
+                renting(scanner,storeOne,primaryMember);
             }
         }
     }
-    public static void renting(Scanner scanner,Store storeOne, ArrayList<Item> items, Member primaryMember){
+    public static void renting(Scanner scanner,Store storeOne, Member primaryMember){
         boolean done = false;
         int totalRentalFee = 0;
         do {
@@ -44,19 +42,20 @@ public class Main {
             if (itemOne != null) {
                 if (storeOne.checkItemAvailability(itemOne)) {
                     double rentalFee = itemOne.getTitle().getRentalFee();
-                    totalRentalFee += rentalFee; // Add rental fee to total
+                    totalRentalFee += rentalFee;
                     System.out.println("Your rental fee is: " + rentalFee);
                     System.out.println("Total rental fee so far: " + totalRentalFee);
                     System.out.println("Do you want to rent another item? (Y/N)");
                     String continueRenting = scanner.nextLine();
                     if (!continueRenting.equalsIgnoreCase("Y")) {
-                        done = true; // Exit loop if the user doesn't want to rent another item
+                        done = true;
                     }
                 } else {
                     System.out.println("Item unavailable");
                 }
+                storeOne.getBoughtItems().add(itemOne);
             }
-            items.add(itemOne);
+
 
         } while (!done);
 
@@ -65,6 +64,6 @@ public class Main {
         System.out.println("Please enter the payment amount:");
         double cash = scanner.nextDouble();
         scanner.nextLine();
-        System.out.println(storeOne.processPayment(items, cash));
+        System.out.println(storeOne.processPayment(storeOne.getBoughtItems(), cash));
     }
 }
