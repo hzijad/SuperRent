@@ -11,16 +11,14 @@ public class Movie extends Title {
 
     //constructors
 
-    public Movie(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String director, String cast, int duration, int year, int uniqueRentalFee, double uniqueLateFee) {
+    public Movie(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String director, String cast, int duration, int year, int rentalFee, int lateRentalFee) {
 
-        super(rentalCode, name, description, title, uniqueStockNumber);
+        super(rentalCode, name, description, title, uniqueStockNumber, rentalFee, lateRentalFee);
 
         setDirector(director);
         setCast(cast);
         setDuration(duration);
         setYear(year);
-        setUniqueRentalFee(uniqueRentalFee);
-        setUniqueLateFee(uniqueLateFee);
 
     }
 
@@ -32,8 +30,6 @@ public class Movie extends Title {
         setCast(null);
         setDuration(0);
         setYear(0);
-        setUniqueRentalFee(0);
-        setUniqueLateFee(0);
 
     }
 
@@ -45,8 +41,6 @@ public class Movie extends Title {
         setCast(other.cast);
         setDuration(other.duration);
         setYear(other.year);
-        setUniqueRentalFee(other.uniqueRentalFee);
-        setUniqueLateFee(other.uniqueLateFee);
 
     }
 
@@ -85,21 +79,7 @@ public class Movie extends Title {
         this.year = year;
     }
 
-    public int getUniqueRentalFee() {
-        return uniqueRentalFee;
-    }
-
-    public void setUniqueRentalFee(int uniqueRentalFee) {
-        this.uniqueRentalFee = uniqueRentalFee;
-    }
-
-    public double getUniqueLateFee() {
-        return uniqueLateFee;
-    }
-
-    public void setUniqueLateFee(double uniqueLateFee) {
-        this.uniqueLateFee = uniqueLateFee;
-    }
+    /*
 
     @Override
     public String toString() {
@@ -125,4 +105,6 @@ public class Movie extends Title {
     public int hashCode() {
         return Objects.hash(director, cast, duration, year, uniqueRentalFee, uniqueLateFee);
     }
+
+     */
 }

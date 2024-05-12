@@ -9,14 +9,12 @@ public class Game extends Title {
 
     //constructors
 
-    public Game(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String producer, int year, int uniqueRentalFee, int uniqueLateFee) {
+    public Game(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String producer, int year, int rentalFee, int lateRentalFee) {
 
-        super(rentalCode, name, description, title, uniqueStockNumber);
+        super(rentalCode, name, description, title, uniqueStockNumber, rentalFee, lateRentalFee);
 
         setProducer(producer);
         setYear(year);
-        setUniqueRentalFee(uniqueRentalFee);
-        setUniqueLateFee(uniqueLateFee);
     }
 
     public Game() {
@@ -25,8 +23,6 @@ public class Game extends Title {
 
         setProducer(null);
         setYear(0);
-        setUniqueRentalFee(0);
-        setUniqueLateFee(0);
 
     }
 
@@ -36,8 +32,6 @@ public class Game extends Title {
 
         setProducer(other.producer);
         setYear(other.year);
-        setUniqueRentalFee(other.uniqueRentalFee);
-        setUniqueLateFee(other.uniqueLateFee);
 
     }
 
@@ -59,21 +53,7 @@ public class Game extends Title {
         this.year = year;
     }
 
-    public int getUniqueRentalFee() {
-        return uniqueRentalFee;
-    }
-
-    public void setUniqueRentalFee(int uniqueRentalFee) {
-        this.uniqueRentalFee = uniqueRentalFee;
-    }
-
-    public double getUniqueLateFee() {
-        return uniqueLateFee;
-    }
-
-    public void setUniqueLateFee(double uniqueLateFee) {
-        this.uniqueLateFee = uniqueLateFee;
-    }
+    /*
 
     @Override
     public String toString() {
@@ -97,4 +77,6 @@ public class Game extends Title {
     public int hashCode() {
         return Objects.hash(producer, year, uniqueRentalFee, uniqueLateFee);
     }
+
+     */
 }

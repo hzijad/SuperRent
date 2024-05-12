@@ -41,6 +41,14 @@ public class Store {
 
     }
 
+    public void listItems(){
+
+        for(int i = 0; i < items.size(); i++){
+            if(items.get(i) != null){
+                System.out.println(items.get(i).getTitle().getName());
+            }
+        }
+    }
 
 
 
@@ -96,6 +104,19 @@ public class Store {
 
     public boolean checkItemAvailability(Item item){
         return items.contains(item);
+    }
+
+    public Item findItem(String name){
+        for(int i = 0; i < items.size(); i++) {
+            if (name.equals(items.get(i).getTitle().getName())) {
+                return items.get(i);
+            }
+        }
+        return null;
+    }
+
+    public String processPayment(Item item, double cash){
+        return "Your change is " + (cash - item.getTitle().getRentalFee());
     }
 
     @Override

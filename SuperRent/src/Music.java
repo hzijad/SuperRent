@@ -6,8 +6,44 @@ public class Music extends Title {
     private String singer;
     private int duration;
     private int tracks;
-    private int uniqueRentalFee;
-    private double uniqueLateFee;
+
+
+    //constructors
+
+    public Music(int rentalCode, String name, String description, TitleType title, int uniqueStockNumber, String producer, int duration, int tracks, int rentalFee, int lateRentalFee) {
+
+        super(rentalCode, name, description, title, uniqueStockNumber, rentalFee, lateRentalFee);
+
+        setProducer(producer);
+        setDuration(duration);
+        setTracks(tracks);
+
+    }
+
+    public Music() {
+
+        super();
+
+        setProducer(null);
+        setDuration(0);
+        setTracks(0);
+
+
+    }
+
+    public Music(Music other) {
+
+        super(other);
+
+        setProducer(other.producer);
+        setSinger(other.singer);
+        setDuration(other.duration);
+        setTracks(other.tracks);
+
+    }
+
+
+    //setters and getters
 
     //constructors
 
@@ -83,21 +119,7 @@ public class Music extends Title {
         this.tracks = tracks;
     }
 
-    public int getUniqueRentalFee() {
-        return uniqueRentalFee;
-    }
 
-    public void setUniqueRentalFee(int uniqueRentalFee) {
-        this.uniqueRentalFee = uniqueRentalFee;
-    }
-
-    public double getUniqueLateFee() {
-        return uniqueLateFee;
-    }
-
-    public void setUniqueLateFee(double uniqueLateFee) {
-        this.uniqueLateFee = uniqueLateFee;
-    }
 
     @Override
     public String toString() {
@@ -106,11 +128,10 @@ public class Music extends Title {
                 ", singer='" + singer + '\'' +
                 ", duration=" + duration +
                 ", tracks=" + tracks +
-                ", uniqueRentalFee=" + uniqueRentalFee +
-                ", uniqueLateFee=" + uniqueLateFee +
                 '}';
     }
 
+    /*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -123,4 +144,6 @@ public class Music extends Title {
     public int hashCode() {
         return Objects.hash(producer, singer, duration, tracks, uniqueRentalFee, uniqueLateFee);
     }
+    */
+
 }
