@@ -52,7 +52,6 @@ public class Store {
 
 
 
-
     //setters and getters
 
     public String getName() {

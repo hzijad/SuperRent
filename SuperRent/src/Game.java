@@ -15,7 +15,6 @@ public class Game extends Title {
 
         setProducer(producer);
         setYear(year);
-
     }
 
     public Game() {
@@ -25,7 +24,6 @@ public class Game extends Title {
         setProducer(null);
         setYear(0);
 
-
     }
 
     public Game(Game other) {
@@ -34,7 +32,6 @@ public class Game extends Title {
 
         setProducer(other.producer);
         setYear(other.year);
-
 
     }
 
